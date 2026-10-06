@@ -1,0 +1,84 @@
+{
+    "$schema": "https://schema.freqtrade.io/schema.json",
+    "bot_name": "signal-bot",
+    "strategy": "SignalStrategy",
+    "dry_run": true,
+    "dry_run_wallet": 1000,
+    "stake_currency": "USDT",
+    "stake_amount": 100,
+    "max_open_trades": 10,
+    "tradable_balance_ratio": 0.99,
+    "fiat_display_currency": "USD",
+    "trading_mode": "spot",
+    "timeframe": "1h",
+    "cancel_open_orders_on_exit": false,
+    "unfilledtimeout": {
+        "entry": 10,
+        "exit": 10,
+        "unit": "minutes"
+    },
+    "entry_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1,
+        "price_last_balance": 0.0,
+        "check_depth_of_market": {
+            "enabled": false,
+            "bids_to_ask_delta": 1
+        }
+    },
+    "exit_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    "exchange": {
+        "name": "binance",
+        "key": "",
+        "secret": "",
+        "pair_whitelist": [
+            "BTC/USDT",
+            "ETH/USDT",
+            "SOL/USDT",
+            "BNB/USDT",
+            "XRP/USDT",
+            "ADA/USDT",
+            "DOGE/USDT",
+            "AVAX/USDT",
+            "LINK/USDT",
+            "DOT/USDT"
+        ],
+        "pair_blacklist": []
+    },
+    "pairlists": [
+        {
+            "method": "StaticPairList"
+        }
+    ],
+    "telegram": {
+        "enabled": true,
+        "token": "",
+        "chat_id": "",
+        "allow_custom_messages": true,
+        "notification_settings": {
+            "status": "silent",
+            "warning": "on",
+            "startup": "on",
+            "entry": "off",
+            "entry_fill": "off",
+            "entry_cancel": "off",
+            "exit": "off",
+            "exit_fill": "on",
+            "exit_cancel": "off",
+            "protection_trigger": "off",
+            "protection_trigger_global": "off",
+            "strategy_msg": "on",
+            "show_candle": "off"
+        },
+        "reload": true,
+        "balance_dust_level": 0.01
+    },
+    "internals": {
+        "process_throttle_secs": 5
+    }
+}
